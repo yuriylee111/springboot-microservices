@@ -1,4 +1,4 @@
-### _Microservices Communication using WebClient_
+### _Microservices Communication using Spring Cloud OpenFeign_
 
 Create 2 Databases in MySQL:
 ```sh
