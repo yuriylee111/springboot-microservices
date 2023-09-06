@@ -1,0 +1,32 @@
+POST
+http://localhost:8080/api/departments
+
+{
+    "departmentName":"IT",
+    "departmentDescription":"Information Technology",
+    "departmentCode":"IT001"
+}
+
+------------
+
+GET
+http://localhost:8080/api/departments/IT001
+
+============
+
+POST
+http://localhost:8081/api/employees
+
+{
+    "firstName": "Jackie",
+    "lastName": "Chan",
+    "email": "jackie@mail.co",
+    "departmentCode":"IT001"
+}
+
+------------
+
+GET
+http://localhost:8081/api/employees/1
+
+
