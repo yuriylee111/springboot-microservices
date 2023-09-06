@@ -1,6 +1,4 @@
-### _Microservices Communication using RestTemplate_
-
-NOTE: As of 5.0 this class is in maintenance mode and soon will be deprecated.
+### _Microservices Communication using WebClient_
 
 Create 2 Databases in MySQL:
 ```sh
