@@ -1,4 +1,4 @@
-### _Microservices Communication using Spring Cloud OpenFeign_
+### _Service Registry using Spring Cloud Netflix Eureka_
 
 Create 2 Databases in MySQL:
 ```sh
@@ -6,9 +6,10 @@ CREATE SCHEMA `department_db`;
 
 CREATE SCHEMA `employee_db`;
 ```
-- Run first DepartmentServiceApplication
+- Run first ServiceRegistryApplication
 
-- Run second EmployeeServiceApplication
+- Run second DepartmentServiceApplication
 
-JSON patterns are in postman.txt
+- Run third EmployeeServiceApplication
 
+open link http://localhost:8761/
