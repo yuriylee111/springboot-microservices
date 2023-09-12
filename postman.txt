@@ -6,7 +6,6 @@ http://localhost:8080/api/departments
     "departmentDescription":"Information Technology",
     "departmentCode":"IT001"
 }
-
 ------------
 
 GET
@@ -29,4 +28,16 @@ http://localhost:8081/api/employees
 GET
 http://localhost:8081/api/employees/1
 
+======= Routes Manually ==========
 
+GET
+http://localhost:9191/api/employees/1
+GET
+http://localhost:9191/api/departments/IT001
+
+======= Routes Automatically =====
+
+GET
+http://localhost:9191/employee-service/api/employees/1
+GET
+http://localhost:9191/department-service/api/departments/IT001
