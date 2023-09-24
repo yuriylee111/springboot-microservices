@@ -1,3 +1,4 @@
+[![Build Status](http://localhost:8081/buildStatus/icon?job=springboot-microservices)](http://localhost:8081/job/springboot-microservices/)
 ### _API Gateway using Spring Cloud Gateway_
 
 Create 2 Databases in MySQL:
