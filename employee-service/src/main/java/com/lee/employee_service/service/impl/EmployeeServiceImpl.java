@@ -4,6 +4,7 @@ import com.lee.employee_service.dto.APIResponseDto;
 import com.lee.employee_service.dto.DepartmentDto;
 import com.lee.employee_service.dto.EmployeeDto;
 import com.lee.employee_service.entity.Employee;
+import com.lee.employee_service.mapper.EmployeeMapper;
 import com.lee.employee_service.repository.EmployeeRepository;
 import com.lee.employee_service.service.APIClient;
 import com.lee.employee_service.service.EmployeeService;
@@ -20,39 +21,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
 
-        Employee employee = new Employee(
-                employeeDto.getId(),
-                employeeDto.getFirstName(),
-                employeeDto.getLastName(),
-                employeeDto.getEmail(),
-                employeeDto.getDepartmentCode()
-        );
-
+        Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
         Employee savedEmployee = employeeRepository.save(employee);
 
-        return new EmployeeDto(
-                savedEmployee.getId(),
-                savedEmployee.getFirstName(),
-                savedEmployee.getLastName(),
-                savedEmployee.getEmail(),
-                savedEmployee.getDepartmentCode()
-        );
+        return EmployeeMapper.mapToEmployeeDto(savedEmployee);
+
     }
 
     @Override
     public APIResponseDto getEmployeeById(Long employeeId) {
 
         Employee employee = employeeRepository.findById(employeeId).get();
-
         DepartmentDto departmentDto = apiClient.getDepartment(employee.getDepartmentCode());
-
-        EmployeeDto employeeDto = new EmployeeDto(
-                employee.getId(),
-                employee.getFirstName(),
-                employee.getLastName(),
-                employee.getEmail(),
-                employee.getDepartmentCode()
-        );
+        EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
 
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setEmployee(employeeDto);
